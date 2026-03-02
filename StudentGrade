@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+#include <string>
+int main() {
+    int grade;
+    char letterGrade;
+
+    do {
+        cout << "Enter your grade: ";
+        cin >> grade;
+
+        if (grade < 100 && grade >= 95) {
+            letterGrade = 'A';
+        }  else if (grade < 95 && grade >= 90) {
+            letterGrade = 'B';
+        } else if  (grade < 90 && grade >= 85) {
+            letterGrade = 'C';
+        } else if  (grade < 85 && grade >= 80) {
+            letterGrade = 'D';
+        } else if  (grade < 80 && grade >= 0) {
+            letterGrade = 'F';
+        } else {
+            cout << "Invalid grade entered. Please enter a grade between 0 and 100." << endl;
+            continue; 
+        }
+
+        switch (letterGrade) {
+            case 'A':
+                cout << "Excellent: ";
+                cout << letterGrade << endl;
+                break;
+            case 'B':
+                cout <<"Good: ";
+                cout << letterGrade << endl;
+                break;
+            case 'C':
+                cout << "Average: ";
+                cout << letterGrade << endl;
+                break;
+            case 'D':
+                cout << "Below Average: ";
+                cout << letterGrade << endl;
+                break;
+            case 'F':
+                cout << "Failing: ";
+                cout << letterGrade << endl;
+                break;
+            default:
+                cout << "Invalid letter grade" << endl;
+        }
+        cout << "Do you want to enter another grade? (y/n): ";
+        char choice;
+        cin >> choice;
+        if (choice == 'n' || choice == 'N') {
+        cout << "Exiting the program." << endl;
+        break;
+        }
+    } while (true);
+    return 0;
+}
